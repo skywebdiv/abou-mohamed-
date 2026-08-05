@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-forest: #1B4D3E;
+    --color-forest-dark: #12372c;
+    --color-mint-light: #F2F7F5;
+    --color-mint-bg: #E7F0ED;
+    --color-mint-border: #D1E1DA;
+    --color-whatsapp: #25D366;
+  }
+  
+  body {
+    background-color: #FDFDFD;
+    color: #2D3436;
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+  }
+}
+
+.bg-forest {
+  background-color: #1B4D3E;
+}
+
+.bg-forest-dark {
+  background-color: #12372c;
+}
+
+.text-forest {
+  color: #1B4D3E;
+}
+
+.border-forest {
+  border-color: #1B4D3E;
+}
+
+.bg-mint-light {
+  background-color: #F2F7F5;
+}
+
+.bg-mint-bg {
+  background-color: #E7F0ED;
+}
+
+.border-mint {
+  border-color: #D1E1DA;
+}
+
+.bg-whatsapp {
+  background-color: #25D366;
+}
+
+.hover\:bg-whatsapp-dark:hover {
+  background-color: #20bd5a;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "مكتب أبو محمد | تصاريح الزواج في السعودية",
+  "description": "المكتب الرسمي لتقديم خدمات استشارات ومتابعة إجراءات تصاريح الزواج في المملكة العربية السعودية - الدفع بعد الإنجاز",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
