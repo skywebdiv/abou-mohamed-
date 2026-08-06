@@ -29,6 +29,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, onOpenCons
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'whatsapp_click',
+        service_name: serviceType,
+        page_location: '/contact'
+      });
+    }
+
     const msg = `السلام عليكم ورحمة الله،
 أود طلب استشارة وتفاصيل عن معاملة تصريح زواج من موقع ${OFFICE_INFO.domain}:
 
@@ -84,6 +93,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, onOpenCons
                 href={OFFICE_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                      event: 'whatsapp_click',
+                      service_name: 'واتساب مباشر',
+                      page_location: '/contact'
+                    });
+                  }
+                }}
                 className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs px-3.5 py-2 rounded-xl transition-colors"
               >
                 محادثة

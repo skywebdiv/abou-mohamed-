@@ -23,8 +23,24 @@ function ScrollToTop() {
   return null;
 }
 
+declare global {
+  interface Window {
+    dataLayer?: any[];
+  }
+}
+
 function MainLayout() {
   const handleOpenConsultation = (serviceName?: string) => {
+    // إرسال حدث النقر إلى Google Tag Manager dataLayer
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'whatsapp_click',
+        service_name: serviceName || 'عام',
+        page_location: window.location.pathname
+      });
+    }
+
     const message = serviceName
       ? `السلام عليكم ورحمة الله وبركاته، أود الحصول على استشارة بخصوص خدمة (${serviceName}) من مكتب أبو محمد.`
       : `السلام عليكم ورحمة الله وبركاته، أود الحصول على استشارة فورية بخصوص تصاريح وإجراءات الزواج من مكتب أبو محمد.`;
